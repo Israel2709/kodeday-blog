@@ -29,6 +29,7 @@ function PostList() {
                                 <PostCard 
                                     key={key}
                                     postData = { post }
+                                    postKey = { key }
                                 />
                             )
                         } 
