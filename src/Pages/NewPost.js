@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import moment from 'moment'
 import firebase from '../lib/firebase'
 
 import {
@@ -42,7 +42,9 @@ function NewPost(){
         const database = firebase.database()
         const postsRef = database.ref("/posts")
 
-        let postObject = { postTitle, postContent, postCategory }
+        let postObject = { postTitle, postContent, postCategory, createDate: moment().format("DD/MM - hh:mm") }
+
+
         console.log( postObject )
 
         postsRef.push( postObject )
